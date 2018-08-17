@@ -11,7 +11,7 @@ module.exports = {
   // add a post to server and sends back the postId to the client as success
   addPost(req, res) {
     const errors = validationResult(req);
-        if (!errors.isEmpty()) {
+    if (!errors.isEmpty()) {
           return res.status(422).json({ errors: errors.array() });
         }   
     if(!req.body.name || !req.body.url || !req.body.text || !req.body.comments) return res.sendStatus(400)
@@ -30,7 +30,7 @@ module.exports = {
   // update a post
   updatePost(req, res) {
     const errors = validationResult(req);
-        if (!errors.isEmpty()) {
+    if (!errors.isEmpty()) {
           return res.status(422).json({ errors: errors.array() });
         }   
     let post = req.store.posts[req.params.postId]
